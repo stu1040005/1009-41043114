@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>記憶卡牌遊戲</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <audio id="success-sound" src="success.mp3"></audio>
+    <audio id="failure-sound" src="failure.mp3"></audio>
+    <h1>卡牌記憶遊戲</h1>
+
+    <div class="game-container">
+        <div class="card-container" id="card-container">
+            <!-- 卡牌将由 JavaScript 动态生成 -->
+        </div>
+    </div>
+
+    <div class="controls">
+        <button id="startButton">開始遊戲</button>
+        <div id="timer" style="display: none;"><span id="time"></span></div>
+        <button id="restartButton" style="display: none;">重新開始</button>
+    </div>
+
+    <!-- 将下拉菜单移至下方 -->
+    <div class="controls">
+        <label for="categorySelect">選擇卡牌種類：</label>
+        <select id="categorySelect">
+            <option value="animals">動物類</option>
+            <option value="plants">植物類</option>
+        </select>
+    </div>
+    <label for="gridSelect">選擇網格大小:</label>
+    <select id="gridSelect">
+        <option value="2x2">2x2</option>
+        <option value="2x4">2x4</option>
+        <option value="4x4" selected>4x4</option>
+        <option value="6x6">6 x 6</option>
+    </select>
+
+<!-- 卡牌容器 -->
+<div id="card-container" class="grid-4x4"></div>
+    <!-- 新增全翻正面和全翻背面卡牌的按钮 -->
+   
+    <label for="countdownSelect">選擇倒計時:</label>
+<select id="countdownSelect">
+    <option value="3">3秒</option>
+    <option value="5">5秒</option>
+    <option value="10">10秒</option>
+</select>
+
+    <!-- 倒数计时器 -->
+    <div id="countdown" style="font-size: 24px; display: none;">3</div>
+    <div id="timer" style="font-size: 24px; display: none;">用時: 0 秒</div>
+    <script src="script.js"></script>
+
+
+    
+    <label>
+        <input type="checkbox" id="hideMatched" checked> 隐藏已匹配的卡牌
+    </label>
+    
+</body>
+</html>
